@@ -1,0 +1,26 @@
+@import "variables";
+
+.show-data{
+    display: flex;
+    flex-direction: column;
+    background-color: darken(lightblue, 25%);
+    margin: 10px;
+    &__budget-up{
+        margin: 20px auto;
+        font-size: $main-fz;
+        @media(min-width: 800px){
+            margin: 70px auto;
+            font-size: $main-fz*1.8;
+        }
+    }
+    
+    &__budget-down{
+        margin: 20px auto;
+        font-size: $main-fz/1.4;
+    
+    @media(min-width: 800px){
+        margin: 50px auto;
+        font-size: $main-fz;
+    }
+}
+    }
