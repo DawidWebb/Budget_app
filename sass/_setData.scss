@@ -1,53 +1,68 @@
 @import "variables";
 
-.set-data{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    background-color: lightblue;
-    &__title{
-        flex-basis: 20%;
-        font-size: $main-fz*1.5;
-        font-family: $basic-ff;
-        padding: 70px;
-        text-align: center;
-        @media(min-width: 800px){
-            flex-basis: 40%;
-            font-size: $main-fz*2;
-            text-align: left;
-        }
+.set-data {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: lightblue;
+  &__title {
+    flex-basis: 20%;
+    font-size: $main-fz * 1.5;
+    font-family: $basic-ff;
+    padding: 70px;
+    text-align: center;
+    @media (min-width: 800px) {
+      flex-basis: 40%;
+      font-size: $main-fz * 2;
+      text-align: left;
     }
-    
+  }
 }
-.form{
-    padding: 0 30px;
+.form {
+  padding: 0 30px;
 }
-.form__all{
-    display: flex;
-    flex-direction: column;
-    @media(min-width: 800px){
-        flex-direction: row; 
-    }
+.form__all {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 }
-.form__change-ballance{
-margin: 0 auto;
+.form__change-ballance {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 50%;
+  text-align: center;
+  @media (min-width: 800px) {
+    margin: 20px 0 0 40px;
+  }
+}
+.fa-plus {
+  height: 100%;
+  display: inline-block;
+}
+.fa-minus {
+  display: none;
 }
 
-
-.form__info, .form__money{
-    width: 250px;
-    height: 40px;
-    margin: 10px auto 20px;
-    @media(min-width: 800px){
-        width: 180px;
-        margin: 20px auto;
-    }
+.form__info,
+.form__money {
+  width: 250px;
+  height: 40px;
+  margin: 10px auto 20px;
+  @media (min-width: 800px) {
+    width: 180px;
+    margin: 20px 10px;
+  }
 }
-.form__btn{
-    width: 120px;
-    height: 40px;
-    margin: 20px auto;
-    @media(min-width: 800px){
-        width: 90px;
-    }
+.form__btn {
+  width: 120px;
+  height: 40px;
+  margin: 20px auto;
+  @media (min-width: 800px) {
+    width: 90px;
+  }
 }

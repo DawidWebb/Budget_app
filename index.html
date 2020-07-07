@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget App</title>
-    <script src="https://kit.fontawesome.com/01dfb58d64.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/main.min.css">
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/01dfb58d64.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
     <div class="wrapper">
-        <section class="set-data wrapper__set-data">
-            <h1 class="set-data__title">App Budget</h1>
-            <div class="form set-data__form">
-            <form class="form__all" action="">
-                <div class="form__change-ballance">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
-                </div>
-                <input class="form__info" type="text">
-                <input class="form__money" type="number">
-                <button class="form__btn">Dodaj</button>
-            </form>
-        </div>
-        </section>
-        <section class="show-data wrapper__show-data">
-            <div class="show-data__budget-up">Wpływy</div>
-            <div class="show-data__budget-down">Wydatki
-                <i class="fas fa-pencil-alt"></i>
-                <i class="fas fa-trash-alt"></i>
+      <section class="set-data wrapper__set-data">
+        <h1 class="set-data__title">App Budget</h1>
+        <div class="form set-data__form">
+          <form class="form__all" action="">
+            <div class="form__change-ballance">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
             </div>
-        </section>
+            <input
+              class="form__info"
+              type="text"
+              placeholder="podaj nazwę..."
+            />
+            <input
+              class="form__money"
+              type="number"
+              placeholder="podaj kwotę..."
+            />
+            <button class="form__btn">Dodaj</button>
+          </form>
+        </div>
+      </section>
+      <section class="show-data wrapper__show-data">
+        <div class="show-data__budget-up">Wpływy</div>
+        <div class="show-data__budget-down">
+          Wydatki
+          <i class="fas fa-pencil-alt"></i>
+          <i class="fas fa-trash-alt"></i>
+        </div>
+      </section>
     </div>
-</body>
+    <script src="./js/addItem.js"></script>
+  </body>
 </html>
