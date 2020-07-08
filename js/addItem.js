@@ -26,18 +26,22 @@ class addItem {
   addItem = (e) => {
     e.preventDefault();
     if (this.ballancePlus === true) {
-      this.plusItem.push({
+      this.plusItem.unshift({
+        id: this.plusItem.length,
         name: this.info.value,
         value: this.money.value,
       });
-      console.log("P:  ", this.plusItem);
+      this.showIncomes();
     } else if (this.ballancePlus === false) {
-      this.minusItem.push({
+      this.minusItem.unshift({
+        id: this.minusItem.length,
         name: this.info.value,
         value: this.money.value,
       });
-      console.log("W:  ", this.minusItem);
+      this.showWidrowth();
     }
+    this.info.value = "";
+    this.money.value = null;
   };
 }
-const add = new addItem();
+// const add = new addItem();

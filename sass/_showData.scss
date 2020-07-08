@@ -33,4 +33,19 @@
       font-size: $main-fz * 1.4;
     }
   }
+  &__title {
+    font-size: $main-fz * 1.2;
+  }
+  &__list {
+    margin: 20px;
+  }
+  .item {
+    width: 300px;
+    margin: 10px;
+    padding: 2px;
+    list-style: none;
+    text-align: left;
+    border: 1px solid;
+    font-size: $main-fz/1.3;
+  }
 }
