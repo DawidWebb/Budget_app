@@ -1,4 +1,6 @@
-class showItem extends addItem {
+import AddItem from "./addItem.js";
+
+class ShowItem extends AddItem {
   constructor(props) {
     super(props);
 
@@ -23,4 +25,4 @@ class showItem extends addItem {
     this.budgetDown.appendChild(nameItem);
   };
 }
-const show = new showItem();
+export default ShowItem;

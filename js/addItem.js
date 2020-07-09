@@ -1,4 +1,4 @@
-class addItem {
+class AddItem {
   constructor() {
     this.ballance = document.querySelector(".form__change-ballance");
     this.ballance.addEventListener("click", this.changeBallance);
@@ -44,4 +44,4 @@ class addItem {
     this.money.value = null;
   };
 }
-// const add = new addItem();
+export default AddItem;
