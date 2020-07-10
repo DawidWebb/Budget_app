@@ -17,9 +17,13 @@ class AddItem {
     if (this.ballancePlus === false) {
       this.minus.style.display = "inline-block";
       this.plus.style.display = "none";
+      this.ballance.classList.toggle("rotate");
+      this.ballance.style.backgroundColor = "red";
     } else if (this.ballancePlus) {
       this.minus.style.display = "none";
       this.plus.style.display = "inline-block";
+      this.ballance.classList.toggle("rotate");
+      this.ballance.style.backgroundColor = "green";
     }
   };
 
@@ -32,6 +36,7 @@ class AddItem {
         value: this.money.value,
       });
       this.showIncomes();
+      this.showBudget();
     } else if (this.ballancePlus === false) {
       this.minusItem.unshift({
         id: this.minusItem.length,
@@ -39,6 +44,7 @@ class AddItem {
         value: this.money.value,
       });
       this.showWidrowth();
+      this.showBudget();
     }
     this.info.value = "";
     this.money.value = null;
