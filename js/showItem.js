@@ -17,56 +17,63 @@ class ShowItem extends AddItem {
     // this.del = document.querySelector(".fa-trash-alt");
   }
   showIncomes = () => {
+    const number = this.plusItem.length - 1;
+    const { name, value, id } = this.plusItem[number];
+
     const edit = document.createElement("i");
     edit.className = "fas fa-pencil-alt";
     const del = document.createElement("i");
     del.className = "fas fa-trash-alt";
 
-    const { name, value, id } = this.plusItem[0];
     const nameItem = document.createElement("li");
     nameItem.className = "item";
+    nameItem.setAttribute("name", `${id}`);
     nameItem.style.borderColor = "green";
-    nameItem.textContent = `${this.plusItem.length}. ${name}, kwota: ${value} zł`;
+    nameItem.textContent = `${name}, kwota: ${value} zł`;
 
     nameItem.appendChild(edit);
     nameItem.appendChild(del);
 
     this.budgetListU.appendChild(nameItem);
 
-    // nameItem.addEventListener("click", (nameItem) => this.showTools(nameItem));
+    edit.addEventListener("click", (e) => this.editTool(e, id));
+    del.addEventListener("click", (e) => this.delTool(e, id));
   };
+
   showWidrowth = () => {
+    const number = this.minusItem.length - 1;
+    const { name, value, id } = this.minusItem[number];
+
     const edit = document.createElement("i");
     edit.className = "fas fa-pencil-alt";
     const del = document.createElement("i");
     del.className = "fas fa-trash-alt";
 
-    const { name, value, id } = this.minusItem[0];
     const nameItem = document.createElement("li");
     nameItem.className = "item";
+    nameItem.setAttribute("name", `${id}`);
     nameItem.style.borderColor = "red";
-    nameItem.textContent = `${this.minusItem.length}. ${name}, kwota: ${value} zł`;
+    nameItem.textContent = `${name}, kwota: ${value} zł`;
 
     nameItem.appendChild(edit);
     nameItem.appendChild(del);
 
     this.budgetListD.appendChild(nameItem);
 
-    // nameItem.addEventListener("click", (nameItem) => this.showTools(nameItem));
+    edit.addEventListener("click", this.editTool);
+    del.addEventListener("click", this.delTool);
   };
 
-  showTools = (item) => {
-    const edit = document.createElement("i");
-    edit.className = "fas fa-pencil-alt";
-    const del = document.createElement("i");
-    del.className = "fas fa-trash-alt";
-    if (item.style.borderColor === "red") {
-      this.budgetListD.appendChild(edit);
-      this.budgetListD.appendChild(del);
-    } else if (item.style.borderColor === "green") {
-      this.budgetListU.appendChild(edit);
-      this.budgetListU.appendChild(del);
-    }
+  editTool = (e, id) => {
+    this.info.value = this.plusItem[id].name;
+    this.money.value = this.plusItem[id].value;
+  };
+  delTool = (e, id) => {
+    console.log(id);
+    this.plusItem.splice(id, 1);
+    this.budgetListU.removeChild(e.path[1]);
+    this.showBudget();
+    console.log(this.plusItem);
   };
   showBudget = () => {
     let incomes = 0;

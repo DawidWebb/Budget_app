@@ -30,15 +30,16 @@ class AddItem {
   addItem = (e) => {
     e.preventDefault();
     if (this.ballancePlus === true) {
-      this.plusItem.unshift({
+      this.plusItem.push({
         id: this.plusItem.length,
         name: this.info.value,
         value: this.money.value,
       });
+
       this.showIncomes();
       this.showBudget();
     } else if (this.ballancePlus === false) {
-      this.minusItem.unshift({
+      this.minusItem.push({
         id: this.minusItem.length,
         name: this.info.value,
         value: this.money.value,
