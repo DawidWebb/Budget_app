@@ -24,11 +24,13 @@
               class="form__info"
               type="text"
               placeholder="podaj nazwę..."
+              required
             />
             <input
               class="form__money"
               type="number"
               placeholder="podaj kwotę..."
+              required
             />
             <button class="form__btn">Dodaj</button>
           </form>
@@ -38,19 +40,16 @@
         <div class="show-data__budget-value">Budżet</div>
         <div class="show-data__budget-up">
           <h2 class="show-data__title">Wpływy</h2>
-          <ul class="show-data__list"></ul>
+          <ul class="show-data__list--up"></ul>
         </div>
         <div class="show-data__budget-down">
           <h2 class="show-data__title">Wydatki</h2>
-          <ul class="show-data__list"></ul>
+          <ul class="show-data__list--down"></ul>
         </div>
-
-        <i class="fas fa-pencil-alt"></i>
-        <i class="fas fa-trash-alt"></i>
+        <!-- <i class="fas fa-pencil-alt"></i>
+        <i class="fas fa-trash-alt"></i> -->
       </section>
     </div>
-    <!-- <script src="./js/addItem.js"></script>
-    <script src="./js/showItem.js"></script> -->
     <script src="./js/main.js" type="module"></script>
   </body>
 </html>

@@ -39,13 +39,31 @@
   &__list {
     margin: 20px;
   }
+}
+.show-data__list--up,
+.show-data__list--down {
+  width: 300px;
+  .fas {
+    display: block;
+    width: 10%;
+    margin-right: 10px;
+    font-size: 18px;
+    text-align: left;
+    line-height: 18px;
+  }
   .item {
-    width: 300px;
+    display: grid;
+    grid-template-columns: 90% 1fr 1fr;
+    width: 70%;
     margin: 10px;
-    padding: 2px;
+    padding: 2px 5px 2px;
     list-style: none;
     text-align: left;
     border: 1px solid;
     font-size: $main-fz/1.3;
+  }
+
+  @media (min-width: 800px) {
+    width: 600px;
   }
 }
