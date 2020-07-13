@@ -12,9 +12,6 @@ class ShowItem extends AddItem {
 
     this.budgetDiv = document.createElement("div");
     this.budget.appendChild(this.budgetDiv);
-
-    // this.edit = document.querySelector(".fa-pencil-alt");
-    // this.del = document.querySelector(".fa-trash-alt");
   }
   showIncomes = () => {
     const number = this.plusItem.length - 1;
@@ -60,26 +57,19 @@ class ShowItem extends AddItem {
 
     this.budgetListD.appendChild(nameItem);
 
-    edit.addEventListener("click", this.editTool);
-    del.addEventListener("click", this.delTool);
+    edit.addEventListener("click", (e) => this.editTool(e, id));
+    del.addEventListener("click", (e) => this.delTool(e, id));
   };
 
-  editTool = (e, id) => {
-    this.info.value = this.plusItem[id].name;
-    this.money.value = this.plusItem[id].value;
-  };
-  delTool = (e, id) => {
-    console.log(id);
-    this.plusItem.splice(id, 1);
-    this.budgetListU.removeChild(e.path[1]);
-    this.showBudget();
-    console.log(this.plusItem);
-  };
   showBudget = () => {
     let incomes = 0;
-    for (let i = 0; i < this.plusItem.length; i++) {
-      incomes += this.plusItem[i].value * 1;
-    }
+
+    this.plusItem.map((item) => {
+      incomes += item.value * 1;
+    });
+    // for (let i = 0; i < this.plusItem.length; i++) {
+    //   incomes += this.plusItem[i].value * 1;
+    // }
     let withdraw = 0;
     for (let i = 0; i < this.minusItem.length; i++) {
       withdraw += this.minusItem[i].value * 1;

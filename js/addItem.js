@@ -38,6 +38,7 @@ class AddItem {
 
       this.showIncomes();
       this.showBudget();
+      console.log("ADD", this.plusItem);
     } else if (this.ballancePlus === false) {
       this.minusItem.push({
         id: this.minusItem.length,
