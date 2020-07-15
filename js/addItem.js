@@ -6,11 +6,12 @@ class AddItem {
     this.minus = document.querySelector(".fa-minus");
     this.info = document.querySelector(".form__info");
     this.money = document.querySelector(".form__money");
-    this.btn = document.querySelector(".form__btn");
-    this.btn.addEventListener("click", this.addItem);
+    this.addBtn = document.querySelector(".add-btn");
+    this.addBtn.addEventListener("click", this.addItem);
     this.plusItem = [];
     this.minusItem = [];
     this.ballancePlus = true;
+    this.editOn = false;
   }
   changeBallance = () => {
     this.ballancePlus = !this.ballancePlus;
@@ -29,25 +30,30 @@ class AddItem {
 
   addItem = (e) => {
     e.preventDefault();
-    if (this.ballancePlus === true) {
-      this.plusItem.push({
-        id: this.plusItem.length,
-        name: this.info.value,
-        value: this.money.value,
-      });
+    if (this.editOn === false) {
+      if (this.ballancePlus === true) {
+        this.plusItem.push({
+          id: this.plusItem.length,
+          name: this.info.value,
+          value: this.money.value,
+        });
 
-      this.showIncomes();
-      this.showBudget();
-      console.log("ADD", this.plusItem);
-    } else if (this.ballancePlus === false) {
-      this.minusItem.push({
-        id: this.minusItem.length,
-        name: this.info.value,
-        value: this.money.value,
-      });
-      this.showWidrowth();
-      this.showBudget();
+        this.showIncomes();
+        this.showBudget();
+      } else if (this.ballancePlus === false) {
+        this.minusItem.push({
+          id: this.minusItem.length,
+          name: this.info.value,
+          value: this.money.value,
+        });
+        this.showWidrowth();
+        this.showBudget();
+      }
+    } else if (this.editOn === true) {
+      // this.addBtn.classList.remove("change-btn");
+      this.editOn = false;
     }
+
     this.info.value = "";
     this.money.value = null;
   };

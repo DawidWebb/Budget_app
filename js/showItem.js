@@ -23,6 +23,7 @@ class ShowItem extends AddItem {
     del.className = "fas fa-trash-alt";
 
     const nameItem = document.createElement("li");
+
     nameItem.className = "item";
     nameItem.setAttribute("name", `${id}`);
     nameItem.style.borderColor = "green";
@@ -67,9 +68,7 @@ class ShowItem extends AddItem {
     this.plusItem.map((item) => {
       incomes += item.value * 1;
     });
-    // for (let i = 0; i < this.plusItem.length; i++) {
-    //   incomes += this.plusItem[i].value * 1;
-    // }
+
     let withdraw = 0;
     for (let i = 0; i < this.minusItem.length; i++) {
       withdraw += this.minusItem[i].value * 1;
