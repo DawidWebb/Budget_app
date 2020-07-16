@@ -4,7 +4,8 @@ class Tolls extends ShowItem {
   constructor(props) {
     super(props);
   }
-  editTool = (e, id) => {
+  editTool = (e, id, edit) => {
+
     this.editOn = !this.editOn;
     if (this.editOn === true) {
       e.path[1].style.backgroundColor = "white";

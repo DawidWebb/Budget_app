@@ -46,6 +46,7 @@ class AddItem {
           name: this.info.value,
           value: this.money.value,
         });
+        
         this.showWidrowth();
         this.showBudget();
       }
